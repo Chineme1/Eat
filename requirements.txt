@@ -1,6 +1,6 @@
 selenium==4.11.2
 beautifulsoup4==4.12.2
 Flask==2.0.0
-Werkzeug==2.0.3
+Werkzeug==3.0.6
 lxml
 webdriver_manager
