@@ -7,13 +7,13 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from scrape_main import MAIN_SCRAPER
 from upload import packIT
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def hello():
-    return packIT(MAIN_SCRAPER('https://umdearborn.campuslabs.com/engage/events'))
+    return jsonify(packIT(MAIN_SCRAPER('https://umdearborn.campuslabs.com/engage/events')))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
